@@ -30,9 +30,9 @@ add_transaction(ledger, '2021-01-01', 'dig for gold: person_a',
     'person_a:equity:mining', -100,
 )
 
-add_transaction(ledger, '2021-01-01', 'grow apples: person_a',
-    'person_a:assets:apples',  100,
-    'person_a:equity:apples', -100,
+add_transaction(ledger, '2021-01-01', 'grow apples: person_b',
+    'person_b:assets:apples',  100,
+    'person_b:equity:apples', -100,
 )
 
 add_transaction(ledger, '2021-01-01', 'barter',
@@ -45,7 +45,8 @@ add_transaction(ledger, '2021-01-01', 'barter',
 history_of_balances(ledger)
 ```
 
-![image](https://github.com/user-attachments/assets/ec0f9934-63e6-48e6-8fb6-4ec6bcda5e91)
+![image](https://github.com/user-attachments/assets/52f70af5-7064-4f3b-977c-3337f3f58cb6)
+
 
 # Example
 
