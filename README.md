@@ -67,3 +67,11 @@ history_of_balances(ledger)
 ```
 
 ![image](https://github.com/user-attachments/assets/4eb8b2b2-e5eb-4aa3-b2c2-8cfb793bff4d)
+
+# history_of_balances
+
+As you can see in the examples above, `history_of_balances` shows the balance sheet after each transaction, so that you can see the effects of the transactions on the accounts.
+Lines that have green or red in them indicate changed accounts.
+
+    Green = increased
+    Red = decreased
