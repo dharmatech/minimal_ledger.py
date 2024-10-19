@@ -1,4 +1,18 @@
 
+# Minimal implementation of plain text accounting in Python.
+
+This is a minimal implementation intended for experimentation.
+
+In this initial version, the core file is only 44 lines. The entire library with all utility functions is 156 lines.
+
+```
+$ wc --lines *.py
+  33 actions.py
+  44 core.py
+  63 display_balances_with_changes.py
+  16 history_of_balances.py
+ 156 total
+```
 
 # Example
 
