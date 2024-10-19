@@ -33,7 +33,7 @@ history_of_balances(ledger)
 
 # Example
 
-[[examples/actions.py]]
+[examples/actions.py](examples/actions.py)
 
 ```python
 from actions import *
