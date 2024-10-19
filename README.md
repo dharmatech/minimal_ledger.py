@@ -4,6 +4,8 @@
 
 [examples/raw-transactions.py](examples/raw-transactions.py)
 
+Adding transactions to the ledger in a traditional way:
+
 ```python
 from history_of_balances import *
 
@@ -33,6 +35,22 @@ history_of_balances(ledger)
 
 # Example
 
+This being Python, you can abstract out commonly formatted transactions into functions.
+
+E.g., instead of the above transaction for digging for gold, we can define:
+
+```python
+def dig_for_gold(ledger: Ledger, date: str, name: str, amount: Decimal):
+    ledger.transactions.append(Transaction(
+        date=date,
+        description=f'dig for gold: {name}',
+        entries=[
+            Entry(f'{name}:assets:gold',    amount),
+            Entry(f'{name}:equity:mining', -amount),
+        ]
+    ))
+```
+
 [examples/actions.py](examples/actions.py)
 
 ```python
@@ -47,3 +65,5 @@ barter(ledger, '2021-01-03', 'person_a', 'person_b', 'gold', 'apples', 50)
 
 history_of_balances(ledger)
 ```
+
+![image](https://github.com/user-attachments/assets/4eb8b2b2-e5eb-4aa3-b2c2-8cfb793bff4d)
