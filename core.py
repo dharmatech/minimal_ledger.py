@@ -39,6 +39,8 @@ class Ledger:
     
 def add_transaction(ledger, date, description, *entries):
 
+    # entries_ = [Entry(acc, amt) for acc, amt in zip(entries[::2], entries[1::2])]
+
     entries_ = [Entry(acc, amt) for acc, amt in zip(entries[::2], entries[1::2])]
 
     ledger.transactions.append(Transaction(date, description, entries_))

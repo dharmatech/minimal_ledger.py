@@ -1,5 +1,5 @@
 
-from history_of_balances import *
+from display_balance import *
 
 ledger = Ledger()
 
@@ -20,4 +20,4 @@ add_transaction(ledger, '2021-01-01', 'barter',
     'person_a:assets:apples',  50
 )
 
-history_of_balances(ledger)
+display_balance(ledger)

@@ -1,31 +1,32 @@
 
 from core import *
+from display_balance import *
 
-def get_substrings(input_str: str) -> List[str]:
-    result = []
-    parts = input_str.split(':')
-    for i in range(len(parts), 0, -1):
-        result.append(':'.join(parts[:i]))
-    return result
+# def get_substrings(input_str: str) -> List[str]:
+#     result = []
+#     parts = input_str.split(':')
+#     for i in range(len(parts), 0, -1):
+#         result.append(':'.join(parts[:i]))
+#     return result
 
-def ledger_leaf_accounts(ledger: Ledger) -> List[str]:
-    return [entry.description for entry in ledger.entries()]
+# def ledger_leaf_accounts(ledger: Ledger) -> List[str]:
+#     return [entry.description for entry in ledger.entries()]
 
-def ledger_all_accounts(ledger: Ledger) -> List[str]:
-    return sorted(
-        set(
-            sub
-            for acc in ledger_leaf_accounts(ledger)
-            for sub in get_substrings(acc)
-        )
-    )
+# def ledger_all_accounts(ledger: Ledger) -> List[str]:
+#     return sorted(
+#         set(
+#             sub
+#             for acc in ledger_leaf_accounts(ledger)
+#             for sub in get_substrings(acc)
+#         )
+#     )
 
-def transform_account(account: str) -> str:
-    parts = account.split(':')
-    category = parts[-2] if parts[-1] == '' else parts[-1]
-    indent_level = len(parts) - 2 if parts[-1] == '' else len(parts) - 1
-    indent = '  ' * indent_level
-    return f"{indent}{category}"
+# def transform_account(account: str) -> str:
+#     parts = account.split(':')
+#     category = parts[-2] if parts[-1] == '' else parts[-1]
+#     indent_level = len(parts) - 2 if parts[-1] == '' else len(parts) - 1
+#     indent = '  ' * indent_level
+#     return f"{indent}{category}"
 
 def display_balances_with_changes(ledger_a: Ledger, ledger_b: Ledger, output_type='terminal'):
 
@@ -55,9 +56,9 @@ def display_balances_with_changes(ledger_a: Ledger, ledger_b: Ledger, output_typ
                 # terminal
                 color = "\033[32m" if diff > 0 else "\033[31m"  # Green for positive, Red for negative
                 reset = "\033[0m"
-                output += f"{account:<{max_account_length}}: {total_b:>7} {color}{diff:+.2f}{reset}\n"
+                output += f"{account:<{max_account_length}}: {total_b:>7.2f} {color}{diff:+.2f}{reset}\n"
             else:
-                output += f"{account:<{max_account_length}}: {total_b:>7}\n"
+                output += f"{account:<{max_account_length}}: {total_b:>7.2f}\n"
 
     print(output)
 
