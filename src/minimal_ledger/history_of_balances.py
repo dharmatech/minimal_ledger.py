@@ -1,6 +1,6 @@
 
-from core import *
-from display_balances_with_changes import *
+from .core import *
+from .display_balances_with_changes import *
 
 def history_of_balances(ledger: Ledger):
     tmp_ledger = Ledger()

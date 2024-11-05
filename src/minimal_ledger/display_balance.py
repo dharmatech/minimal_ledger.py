@@ -1,5 +1,7 @@
 
-from core import *
+from .core import *
+
+# from minimal_ledger.core import *
 
 def get_substrings(input_str: str) -> List[str]:
     result = []

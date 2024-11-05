@@ -1,6 +1,6 @@
 
-from core import *
-from display_balance import *
+from .core import *
+from .display_balance import *
 
 # def get_substrings(input_str: str) -> List[str]:
 #     result = []
